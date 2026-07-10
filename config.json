@@ -4,14 +4,14 @@
   },
   "inbounds": [
     {
-      "port": 10000,
-      "listen": "127.0.0.1",
+      "port": 8080,
       "protocol": "vless",
       "settings": {
         "clients": [
           {
             "id": "f47ac10b-58cc-4372-a567-0e02b2c3d479",
-            "level": 0
+            "level": 0,
+            "email": "user@v2ray"
           }
         ],
         "decryption": "none"
@@ -19,7 +19,8 @@
       "streamSettings": {
         "network": "ws",
         "wsSettings": {
-          "path": "/vless"
+          "path": "/vless",
+          "headers": {}
         }
       }
     }
@@ -35,6 +36,7 @@
     }
   ],
   "routing": {
+    "domainStrategy": "IPIfNonMatch",
     "rules": [
       {
         "type": "field",
